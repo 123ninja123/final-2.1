@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Sentryl AI Email Threat & Forensic Shield</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="config.js"></script>
+<style>
+  :root{
+    --bg: #0a0e14;
+    --bg-alt: #0d1320;
+    --panel: #111826;
+    --panel-2: #0d1420;
+    --border: rgba(231,238,245,0.09);
+    --border-strong: rgba(231,238,245,0.16);
+    --text: #e7eef5;
+    --muted: #94a3b5;
+    --muted-dim: #64748a;
+    --cyan: #3fe8d4;
+    --cyan-dim: rgba(63,232,212,0.14);
+    --violet: #b77cf5;
+    --violet-dim: rgba(183,124,245,0.14);
+    --danger: #ff5c6c;
+    --danger-dim: rgba(255,92,108,0.14);
+    --warn: #f5c563;
+    --warn-dim: rgba(245,197,99,0.14);
+    --radius: 14px;
+    --container: 920px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-top: 36px;
+    margin-bottom: 14px;
+  }
+
+  h1{ font-size: clamp(2.2rem, 3.5vw, 2.8rem); line-height: 1.15; margin-top: 0; }
+  h2{ font-size: 1.45rem; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-top: 48px; }
+  h3{ font-size: 1.15rem; margin-top: 28px; }
+
+  .mono{ font-family: 'JetBrains Mono', monospace; }
+  a{ color: var(--cyan); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+
+  .container{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Grid Atmosphere */
+  .grid-glow{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(600px 400px at 15% 8%, rgba(63,232,212,0.06), transparent 60%),
+      radial-gradient(600px 500px at 90% 30%, rgba(183,124,245,0.05), transparent 60%),
+      linear-gradient(var(--bg), var(--bg));
+    background-color: var(--bg);
+  }
+  .grid-glow::before{
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(231,238,245,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(231,238,245,0.035) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
+  }
+
+  /* Navigation Header */
+  header{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10,14,20,0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav{
+    display: flex; align-items: center; justify-content: space-between;
+    height: 74px;
+  }
+  .brand{
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Space Grotesk'; font-weight: 600; font-size: 1.15rem; color: var(--text);
+  }
+  .brand svg{ width: 26px; height: 26px; }
+  .nav-links{ display: flex; gap: 26px; align-items: center; }
+  .nav-links a{ font-size: 0.9rem; color: var(--muted); transition: color .2s ease; }
+  .nav-links a:hover{ color: var(--text); text-decoration: none; }
+  .nav-cta{
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--cyan-dim); border: 1px solid rgba(63,232,212,0.35);
+    color: var(--cyan); padding: 7px 16px; border-radius: 999px;
+    font-size: 0.85rem; font-weight: 500; transition: all .2s ease;
+  }
+  .nav-cta:hover{ background: var(--cyan); color: #06110f; text-decoration: none; }
+
+  /* Content Wrapper */
+  .policy-wrapper{
+    padding: 60px 0 100px;
+  }
+  .policy-card{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 48px 44px;
+    box-shadow: 0 30px 60px -30px rgba(0,0,0,0.6);
+  }
+  @media (max-width: 680px){
+    .policy-card{ padding: 32px 22px; }
+  }
+
+  .meta-tag-bar{
+    display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
+    margin-bottom: 24px;
+  }
+  .meta-tag{
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.76rem;
+    padding: 4px 10px; border-radius: 6px;
+  }
+  .meta-tag.cyan{ background: var(--cyan-dim); color: var(--cyan); border: 1px solid rgba(63,232,212,0.25); }
+  .meta-tag.violet{ background: var(--violet-dim); color: var(--violet); border: 1px solid rgba(183,124,245,0.25); }
+  .meta-tag.dim{ background: rgba(231,238,245,0.06); color: var(--muted); border: 1px solid var(--border); }
+
+  p, li{
+    color: #c9d5e2;
+    font-size: 0.98rem;
+  }
+  ul, ol{
+    padding-left: 24px;
+    margin-bottom: 20px;
+  }
+  li{
+    margin-bottom: 8px;
+  }
+
+  /* Highlight Callout Boxes */
+  .callout{
+    background: var(--panel-2);
+    border-left: 3px solid var(--cyan);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 20px;
+    margin: 24px 0;
+    font-size: 0.92rem;
+  }
+  .callout.warn{
+    border-left-color: var(--warn);
+    background: rgba(245,197,99,0.06);
+  }
+  .callout.safe{
+    border-left-color: #4ade80;
+    background: rgba(74,222,128,0.06);
+  }
+  .callout-title{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  /* Data Table */
+  .audit-table-wrap{
+    overflow-x: auto;
+    margin: 24px 0;
+  }
+  table.audit-table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    background: var(--bg-alt);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  table.audit-table th, table.audit-table td{
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  table.audit-table th{
+    background: rgba(231,238,245,0.05);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  table.audit-table td{
+    color: var(--muted);
+  }
+  table.audit-table tr:last-child td{
+    border-bottom: none;
+  }
+  table.audit-table code{
+    background: rgba(231,238,245,0.08);
+    color: var(--cyan);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+  }
+
+  /* Footer */
+  footer{
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+    margin-top: 60px;
+  }
+  .footer-row{
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+  }
+  .footer-links{ display: flex; gap: 26px; }
+  .footer-links a{ font-size: 0.85rem; color: var(--muted); }
+  .footer-links a:hover{ color: var(--text); }
+  .footer-brand{ display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="grid-glow"></div>
+
+<header>
+  <div class="container nav">
+    <a href="/" class="brand">
+      <svg viewBox="0 0 32 32" fill="none">
+        <path d="M16 3 27 8v9c0 8-5 12.5-11 13-6-.5-11-5-11-13V8L16 3Z" stroke="#3fe8d4" stroke-width="1.8"/>
+        <path d="M9 16h14" stroke="#3fe8d4" stroke-width="1.8" opacity="0.55"/>
+        <circle cx="9" cy="16" r="1.4" fill="#3fe8d4"/>
+      </svg>
+      Sentryl
+    </a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/#solution">Features</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="https://microsoftedge.microsoft.com/addons/detail/ORDCKC10MVMZ" target="_blank" rel="noopener noreferrer" class="nav-cta">Add to Microsoft Edge</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container policy-wrapper">
+  <div class="policy-card">
+
+    <div class="meta-tag-bar">
+      <span class="meta-tag cyan">OFFICIAL PRIVACY DISCLOSURE</span>
+      <span class="meta-tag violet">MICROSOFT EDGE ADD-ONS COMPLIANT</span>
+      <span class="meta-tag dim mono">VERSION 1.0.1</span>
+      <span class="meta-tag dim mono">EFFECTIVE: SEPT 2, 2026</span>
+    </div>
+
+    <h1>Privacy Policy</h1>
+    <p style="font-size: 1.1rem; color: var(--muted); margin-bottom: 32px;">
+      This Privacy Policy describes how <strong>Sentryl — AI Email Threat &amp; Forensic Shield</strong> (&ldquo;Sentryl&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) accesses, inspects, processes, and protects information when you use our browser extension and associated threat-intelligence services.
+    </p>
+
+    <div class="callout safe">
+      <div class="callout-title">🛡️ Our Fundamental Privacy Commitment</div>
+      <p style="margin: 0; font-size: 0.9rem;">
+        Sentryl is built strictly for in-browser cybersecurity triage. We <strong>never sell personal data</strong>, we <strong>do not inject advertisements</strong>, we <strong>do not monitor your unrelated web browsing</strong>, and we <strong>never access your email credentials or contacts</strong>.
+      </p>
+    </div>
+
+    <!-- Section 1 -->
+    <h2>1. Introduction &amp; Scope</h2>
+    <p>
+      Sentryl is a Manifest V3 browser extension and security intelligence platform designed for Microsoft Edge and Chromium-based browsers. Its single purpose is to perform real-time email forensic analysis — surfacing lookalike domains, credential harvesting links, homoglyph attacks, and SMTP routing anomalies directly inside your webmail interface.
+    </p>
+
+    <!-- Section 2 -->
+    <h2>2. What Information Sentryl Accesses</h2>
+    <p>
+      When you actively open an email in supported webmail services (e.g., Google Gmail at <code>mail.google.com</code>), Sentryl parses the Document Object Model (DOM) of the <strong>currently opened email message only</strong> to extract cybersecurity indicators:
+    </p>
+    <ul>
+      <li><strong>Sender Information:</strong> The sender's email address and displayed name (used to evaluate lookalike domain spoofing and homoglyph attacks).</li>
+      <li><strong>Subject Line &amp; Text Snippets:</strong> Natural language indicators analyzed for urgency pressure, wire transfer fraud (BEC), or credential harvesting cues.</li>
+      <li><strong>Hyperlinks (URLs):</strong> Web addresses rendered in the email body (inspected for IP-based hosts, punycode/homoglyph trickery, or high-risk TLDs).</li>
+      <li><strong>Email Headers (when available):</strong> Authentication status strings (SPF, DKIM, DMARC) and SMTP <code>Received:</code> relay IP hops.</li>
+    </ul>
+
+    <div class="callout warn">
+      <div class="callout-title">✕ What Sentryl Never Accesses</div>
+      <ul style="margin: 4px 0 0; padding-left: 18px; font-size: 0.88rem;">
+        <li>Your email passwords, account credentials, or multi-factor authentication tokens.</li>
+        <li>Your address book, contacts list, calendar, or sent message history.</li>
+        <li>Unopened emails or emails outside the currently active reading pane.</li>
+        <li>Your general browsing history, search queries, cookies, or activity on other tabs.</li>
+        <li>Email file attachments (attachments are ignored and not processed).</li>
+      </ul>
+    </div>
+
+    <!-- Section 3 -->
+    <h2>3. Summary of Browser Permissions &amp; Why Required</h2>
+    <div class="audit-table-wrap">
+      <table class="audit-table">
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Type</th>
+            <th>Technical Purpose &amp; Justification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>storage</code></td>
+            <td>API Permission</td>
+            <td>Stores the last scan verdict (<code>lastScan</code>) and scan metadata in <code>chrome.storage.local</code> so you can review forensic findings in the popup and dossier without rescanning.</td>
+          </tr>
+          <tr>
+            <td><code>activeTab</code></td>
+            <td>API Permission</td>
+            <td>Allows the extension to read the open email tab when you click the Sentryl toolbar icon, maintaining least-privilege security.</td>
+          </tr>
+          <tr>
+            <td><code>https://mail.google.com/*</code></td>
+            <td>Host Permission</td>
+            <td>Enables the content script to detect when an email is opened in Gmail and render the inline threat indicator banner.</td>
+          </tr>
+          <tr>
+            <td><code>https://*.openstreetmap.org/*</code></td>
+            <td>Host Permission</td>
+            <td>Enables the forensic intelligence dossier (<code>report.html</code>) to render geographical map tiles for originating SMTP relay IP paths.</td>
+          </tr>
+          <tr>
+            <td><code>https://*.sentryl.ai/*</code>, <code>https://*.vercel.app/*</code></td>
+            <td>Host Permission</td>
+            <td>Allows optional connection to the Sentryl Threat Analysis API for deep forensic scanning.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Section 4 -->
+    <h2>4. How Information Is Processed (Local &amp; Hybrid AI Engine)</h2>
+    <p>
+      Sentryl operates using a resilient <strong>dual-mode architecture</strong>:
+    </p>
+    <ul>
+      <li><strong>Client-Side Heuristic Engine:</strong> By default, domain similarity algorithms (Levenshtein distance, homoglyph replacement mapping), URL structure checks, and heuristic regex scoring execute <strong>100% locally</strong> in your browser runtime without transmitting data.</li>
+      <li><strong>Optional Server-Side Threat API:</strong> If enabled by your organization or configured in <code>config.js</code>, the extension transmits email indicators (sender, subject, URLs, headers) to the designated Sentryl backend API endpoint via secure TLS/HTTPS for deep threat verification. If the backend is unavailable or unconfigured, the extension automatically falls back to client-only analysis.</li>
+    </ul>
+
+    <!-- Section 5 -->
+    <h2>5. Local Storage &amp; Data Retention</h2>
+    <p>
+      Sentryl uses the browser&rsquo;s sandboxed <code>chrome.storage.local</code> API to temporarily cache the analysis verdict (e.g. risk score, detected indicator tags, and relay hops) for the single last-scanned email.
+    </p>
+    <ul>
+      <li>This data resides solely on your physical device and is never synced across devices via cloud accounts.</li>
+      <li>No permanent database of your personal emails is created or retained on Sentryl servers.</li>
+      <li>Backend API processing (when engaged) operates in-memory; forensic report IDs expire from temporary memory caches.</li>
+    </ul>
+
+    <!-- Section 6 -->
+    <h2>6. Third-Party Services &amp; Disclosures</h2>
+    <p>
+      Sentryl minimizes external network connections:
+    </p>
+    <ul>
+      <li><strong>OpenStreetMap (Leaflet Map Tiles):</strong> When you open the Extended Forensic Dossier (<code>report.html</code>), map imagery tiles are fetched from OpenStreetMap servers (<code>openstreetmap.org</code>) to visualize IP coordinates. No email text, URLs, or user identifiers are sent to OpenStreetMap.</li>
+      <li><strong>No Analytics or Tracking SDKs:</strong> Sentryl contains no Google Analytics, no telemetry trackers, no advertising pixels, and no user fingerprinting libraries.</li>
+    </ul>
+
+    <!-- Section 7 -->
+    <h2>7. Data Sharing &amp; Sale</h2>
+    <p>
+      We state unequivocally:
+    </p>
+    <ul>
+      <li>We <strong>do not sell</strong>, rent, trade, or monetize your personal information or email indicators to any third parties or data brokers.</li>
+      <li>We do not share your email data with advertisers or marketing networks.</li>
+      <li>Indicator data is used strictly and exclusively to evaluate email security risk and render threat intelligence to you.</li>
+    </ul>
+
+    <!-- Section 8 -->
+    <h2>8. Security &amp; Data Protection Measures</h2>
+    <p>
+      We implement industry-standard cybersecurity best practices:
+    </p>
+    <ul>
+      <li><strong>Transport Security:</strong> All API communication is strictly encrypted over HTTPS (TLS 1.3).</li>
+      <li><strong>DOM Sanitization:</strong> All user-facing UI elements utilize strict DOM text node bindings to prevent Cross-Site Scripting (XSS).</li>
+      <li><strong>Manifest V3 Compliance:</strong> No remotely hosted JavaScript code is executed; all extension scripts are self-contained and statically verified during store packaging.</li>
+      <li><strong>Input Boundary Limits:</strong> Maximum payload length constraints prevent memory exhaustion or denial-of-service attempts.</li>
+    </ul>
+
+    <!-- Section 9 -->
+    <h2>9. User Controls, Deletion &amp; Opt-Out</h2>
+    <p>You maintain full control over Sentryl at all times:</p>
+    <ul>
+      <li><strong>Clear Local Cache:</strong> You can clear all cached scan data at any time by right-clicking the Sentryl extension icon &rarr; <em>Manage extension</em> &rarr; <em>Clear data</em>, or by clearing your browser cache.</li>
+      <li><strong>Extension Removal:</strong> Uninstalling the extension immediately purges all locally stored data from <code>chrome.storage.local</code>.</li>
+      <li><strong>Disable In-Page Overlay:</strong> You can dismiss or minimize the inline Gmail warning banner at any time using the close (✕) control.</li>
+    </ul>
+
+    <!-- Section 10 -->
+    <h2>10. Children's Privacy</h2>
+    <p>
+      Sentryl is an enterprise and consumer security tool not directed at children under the age of 13. We do not knowingly collect or solicit personal information from children.
+    </p>
+
+    <!-- Section 11 -->
+    <h2>11. International Transfers</h2>
+    <p>
+      If you utilize an organization-hosted Sentryl backend API, data transmitted for analysis is processed on the servers designated by your deployment configuration in accordance with applicable regional data protection laws (such as GDPR or CCPA).
+    </p>
+
+    <!-- Section 12 -->
+    <h2>12. Policy Changes &amp; Version History</h2>
+    <p>
+      We may update this Privacy Policy from time to time to reflect security enhancements or regulatory changes. Any revisions will be published on this page with an updated &ldquo;Effective Date&rdquo;.
+    </p>
+
+    <!-- Section 13 -->
+    <h2>13. Contact Information</h2>
+    <p>
+      If you have questions, privacy inquiries, or security vulnerability disclosures regarding Sentryl, please contact our security team:
+    </p>
+    <div style="background: var(--panel-2); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-top: 14px;">
+      <div style="font-weight: 600; color: var(--text); margin-bottom: 4px;">Sentryl Security &amp; Privacy Team</div>
+      <div style="font-size: 0.92rem; color: var(--muted);">Email: <a href="mailto:privacy@sentryl.ai">privacy@sentryl.ai</a> / <a href="mailto:security@sentryl.ai">security@sentryl.ai</a></div>
+      <div style="font-size: 0.92rem; color: var(--muted); margin-top: 4px;">Project Portal: <a href="https://sentryl-eta.vercel.app" target="_blank" rel="noopener noreferrer">https://sentryl-eta.vercel.app</a></div>
+      <div style="font-size: 0.92rem; color: var(--muted); margin-top: 4px;">Source Repository: <a href="https://github.com/jayasish-dev/Sentryl" target="_blank" rel="noopener noreferrer">https://github.com/jayasish-dev/Sentryl</a></div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div class="footer-brand">
+      <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><path d="M16 3 27 8v9c0 8-5 12.5-11 13-6-.5-11-5-11-13V8L16 3Z" stroke="#94a3b5" stroke-width="1.6"/></svg>
+      Sentryl — see what's hiding in your inbox
+    </div>
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/#terms">Terms</a>
+      <a href="https://microsoftedge.microsoft.com/addons/detail/ORDCKC10MVMZ" target="_blank" rel="noopener noreferrer">Edge Add-ons</a>
+      <a href="https://github.com/jayasish-dev/Sentryl" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
